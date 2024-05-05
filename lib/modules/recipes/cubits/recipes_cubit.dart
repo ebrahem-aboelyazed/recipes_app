@@ -18,7 +18,7 @@ class RecipesCubit extends Cubit<RecipesState> {
     final response = await recipesService.getRecipes();
     response.fold(
       (failure) => emit(RecipesState.failure(failure)),
-      (articles) => emit(RecipesState.loaded(articles)),
+      (recipes) => emit(RecipesState.loaded(recipes)),
     );
   }
 }
