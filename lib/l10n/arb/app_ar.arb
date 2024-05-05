@@ -1,0 +1,11 @@
+{
+  "@@locale": "ar",
+  "search": "بحث",
+  "no_results_found": "لا يوجد نتائج",
+  "home_txt": "الرئيسية",
+  "language": "اللغة",
+  "something_went_wrong": "حدث خطأ ما، يرجى المحاولة مرة أخرى لاحقًا",
+  "settings": "الإعدادات",
+  "dark_mode": "الوضع الليلي",
+  "recipes": "الوصفات"
+}
