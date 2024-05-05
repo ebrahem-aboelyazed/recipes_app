@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipes_app/modules/home/home.dart';
+import 'package:recipes_app/modules/recipes/recipes.dart';
+import 'package:recipes_app/modules/settings/settings.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -24,9 +26,9 @@ class HomePage extends StatelessWidget {
               },
               child: PageView(
                 controller: cubit.pageController,
-                children: [
-                  Container(),
-                  Container(),
+                children: const [
+                  RecipesView(),
+                  SettingsView(),
                 ],
               ),
             );

@@ -12,13 +12,15 @@ import 'package:dio/dio.dart' as _i3;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
+import '../../modules/recipes/recipes.dart' as _i10;
+import '../../modules/recipes/services/recipes_service_impl.dart' as _i11;
 import '../../modules/settings/services/settings_storage.dart' as _i7;
 import '../../routes/app_pages.dart' as _i5;
 import '../api/local/api_cache_manager.dart' as _i6;
 import '../api/local/hive_manager.dart' as _i4;
 import '../api/remote/base_api_impl.dart' as _i9;
 import '../core.dart' as _i8;
-import 'register_module.dart' as _i10;
+import 'register_module.dart' as _i12;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -47,8 +49,10 @@ extension GetItInjectableX on _i1.GetIt {
       },
       preResolve: true,
     );
+    gh.lazySingleton<_i10.RecipesService>(
+        () => _i11.RecipesServiceImpl(gh<_i8.BaseApi>()));
     return this;
   }
 }
 
-class _$RegisterModule extends _i10.RegisterModule {}
+class _$RegisterModule extends _i12.RegisterModule {}

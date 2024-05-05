@@ -7,5 +7,7 @@
   "something_went_wrong": "Something went wrong, please try again later",
   "settings": "Settings",
   "dark_mode": "Dark Mode",
-  "recipes": "Recipes"
+  "recipes": "Recipes",
+  "ingredients": "Ingredients",
+  "preparation_time": "Preparation Time"
 }
