@@ -15,8 +15,6 @@ class AuthCubit extends Cubit<AuthState> {
 
   final AuthService authService;
 
-  bool biometricAuthenticated = false;
-
   /// Retrieves the current user.
   User? get currentUser => authService.currentUser;
 
