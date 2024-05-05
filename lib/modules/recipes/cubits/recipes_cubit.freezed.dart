@@ -25,7 +25,6 @@ mixin _$RecipesState {
     required TResult Function(Failure failure) failure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -45,7 +44,6 @@ mixin _$RecipesState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(RecipesInitial value) initial,
@@ -55,7 +53,6 @@ mixin _$RecipesState {
     required TResult Function(RecipesFailure value) failure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(RecipesInitial value)? initial,
@@ -89,9 +86,9 @@ class _$RecipesStateCopyWithImpl<$Res, $Val extends RecipesState>
     implements $RecipesStateCopyWith<$Res> {
   _$RecipesStateCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 }
 
@@ -375,7 +372,7 @@ class _$RecipesLoadedImpl implements RecipesLoaded {
   @override
   List<Recipe> get recipes {
     if (_recipes is EqualUnmodifiableListView) return _recipes;
-// ignore: implicit_dynamic_type
+    // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_recipes);
   }
 

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipes_app/core/core.dart';
 import 'package:recipes_app/l10n/l10n.dart';
+import 'package:recipes_app/modules/auth/auth.dart';
 import 'package:recipes_app/modules/settings/settings.dart';
+import 'package:recipes_app/utils/utils.dart';
 
 class SettingsView extends StatefulWidget {
   const SettingsView({super.key});
@@ -71,6 +74,26 @@ class _SettingsViewState extends State<SettingsView> {
                         );
                   },
                 ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          ElevatedButton(
+            onPressed: () async {
+              final cubit = context.read<AuthCubit>();
+              await cubit.signOut();
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.redAccent,
+              fixedSize: Size(
+                context.widthPercentage(0.8),
+                45,
+              ),
+            ),
+            child: Text(
+              context.l10n.logout,
+              style: const TextStyle(
+                color: Colors.white,
               ),
             ),
           ),

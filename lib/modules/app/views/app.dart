@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:recipes_app/core/core.dart';
 import 'package:recipes_app/l10n/l10n.dart';
+import 'package:recipes_app/modules/auth/auth.dart';
 import 'package:recipes_app/modules/recipes/recipes.dart';
 import 'package:recipes_app/modules/settings/settings.dart';
 import 'package:recipes_app/routes/routes.dart';
@@ -14,12 +15,23 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final settingsStorage = getIt.get<SettingsStorage>();
-    return BlocProvider<RecipesCubit>(
-      create: (context) {
-        return RecipesCubit(
-          recipesService: getIt.get<RecipesService>(),
-        );
-      },
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthCubit>(
+          create: (context) {
+            return AuthCubit(
+              authService: getIt.get<AuthService>(),
+            );
+          },
+        ),
+        BlocProvider<RecipesCubit>(
+          create: (context) {
+            return RecipesCubit(
+              recipesService: getIt.get<RecipesService>(),
+            );
+          },
+        ),
+      ],
       child: GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
         child: ValueListenableBuilder<Box<dynamic>>(

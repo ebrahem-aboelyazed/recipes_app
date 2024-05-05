@@ -9,5 +9,6 @@
   "dark_mode": "الوضع الليلي",
   "recipes": "الوصفات",
   "ingredients": "المكونات",
-  "preparation_time": "وقت التحضير"
+  "preparation_time": "وقت التحضير",
+  "logout": "تسجيل الخروج"
 }

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:recipes_app/core/core.dart';
@@ -10,9 +11,11 @@ class AppHelper {
 
   /// Configures the application.
   ///
-  /// Ensures the Flutter widgets are initialized and configure dependencies
+  /// Ensures the Flutter widgets are initialized, initializes Firebase,
+  /// and configure dependencies
   static Future<void> configureApp() async {
     WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
     await configureDependencies();
     await _initHive();
   }

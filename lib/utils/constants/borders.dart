@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:recipes_app/utils/constants/app_colors.dart';
+import 'package:recipes_app/utils/utils.dart';
 
 class Borders {
   Borders._();
 
-  static OutlineInputBorder searchBorder = OutlineInputBorder(
-    borderSide: const BorderSide(color: AppColors.borderColor),
+  static OutlineInputBorder defaultBorder = const OutlineInputBorder(
+    borderRadius: BorderRadius.all(
+      Radius.circular(Dimensions.radiusLarge),
+    ),
+  );
+
+  static OutlineInputBorder errorBorder = OutlineInputBorder(
+    borderSide: const BorderSide(color: Colors.red),
     borderRadius: BorderRadius.circular(8),
   );
 }

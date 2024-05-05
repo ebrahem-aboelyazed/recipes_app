@@ -9,5 +9,6 @@
   "dark_mode": "Dark Mode",
   "recipes": "Recipes",
   "ingredients": "Ingredients",
-  "preparation_time": "Preparation Time"
+  "preparation_time": "Preparation Time",
+  "logout": "Logout"
 }
