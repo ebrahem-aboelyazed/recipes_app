@@ -28,5 +28,6 @@ class AppHelper {
     await Hive.initFlutter();
     await hiveManager.initializeCacheBox();
     await hiveManager.initializeSettingsBox();
+    await hiveManager.initializeFavoritesBox();
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:recipes_app/modules/auth/auth.dart';
+import 'package:recipes_app/modules/favorites/favorites.dart';
 import 'package:recipes_app/modules/home/home.dart';
 import 'package:recipes_app/modules/recipes/recipes.dart';
 import 'package:recipes_app/modules/settings/settings.dart';
@@ -37,6 +38,7 @@ class HomePage extends StatelessWidget {
                   controller: cubit.pageController,
                   children: const [
                     RecipesView(),
+                    FavoritesView(),
                     SettingsView(),
                   ],
                 ),

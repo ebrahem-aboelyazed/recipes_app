@@ -48,4 +48,16 @@ class HiveManager {
       encryptionCipher: HiveAesCipher(encryptionKey),
     );
   }
+
+  /// Initializes the favorites box for storing user's favorite recipes.
+  ///
+  /// Returns:
+  ///   A [Box<String>] for storing favorite recipes with encryption.
+  Future<Box<String>> initializeFavoritesBox() async {
+    final encryptionKey = await _setupSecureKey();
+    return Hive.openBox<String>(
+      AppConstants.favorites,
+      encryptionCipher: HiveAesCipher(encryptionKey),
+    );
+  }
 }

@@ -21,29 +21,51 @@ Recipe _$RecipeFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Recipe {
   String get id => throw _privateConstructorUsedError;
+
   String get fats => throw _privateConstructorUsedError;
+
   String get name => throw _privateConstructorUsedError;
+
   String get time => throw _privateConstructorUsedError;
+
   String get image => throw _privateConstructorUsedError;
+
   List<String> get weeks => throw _privateConstructorUsedError;
+
   String get carbos => throw _privateConstructorUsedError;
+
   String get fibers => throw _privateConstructorUsedError;
+
   double get rating => throw _privateConstructorUsedError;
+
   String get country => throw _privateConstructorUsedError;
+
   num get ratings => throw _privateConstructorUsedError;
+
   String get calories => throw _privateConstructorUsedError;
+
   String get headline => throw _privateConstructorUsedError;
+
   List<String> get keywords => throw _privateConstructorUsedError;
+
   List<String> get products => throw _privateConstructorUsedError;
+
   String get proteins => throw _privateConstructorUsedError;
+
   int get favorites => throw _privateConstructorUsedError;
+
   int get difficulty => throw _privateConstructorUsedError;
+
   String get description => throw _privateConstructorUsedError;
+
   bool get highlighted => throw _privateConstructorUsedError;
+
   List<String> get ingredients => throw _privateConstructorUsedError;
+
   List<String> get deliverableIngredients => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $RecipeCopyWith<Recipe> get copyWith => throw _privateConstructorUsedError;
 }
@@ -52,6 +74,7 @@ mixin _$Recipe {
 abstract class $RecipeCopyWith<$Res> {
   factory $RecipeCopyWith(Recipe value, $Res Function(Recipe) then) =
       _$RecipeCopyWithImpl<$Res, Recipe>;
+
   @useResult
   $Res call(
       {String id,
@@ -85,6 +108,7 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -212,6 +236,7 @@ abstract class _$$RecipeImplCopyWith<$Res> implements $RecipeCopyWith<$Res> {
   factory _$$RecipeImplCopyWith(
           _$RecipeImpl value, $Res Function(_$RecipeImpl) then) =
       __$$RecipeImplCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -418,6 +443,7 @@ class _$RecipeImpl implements _Recipe {
   @JsonKey()
   final String image;
   final List<String> _weeks;
+
   @override
   @JsonKey()
   List<String> get weeks {
@@ -448,6 +474,7 @@ class _$RecipeImpl implements _Recipe {
   @JsonKey()
   final String headline;
   final List<String> _keywords;
+
   @override
   @JsonKey()
   List<String> get keywords {
@@ -457,6 +484,7 @@ class _$RecipeImpl implements _Recipe {
   }
 
   final List<String> _products;
+
   @override
   @JsonKey()
   List<String> get products {
@@ -481,6 +509,7 @@ class _$RecipeImpl implements _Recipe {
   @JsonKey()
   final bool highlighted;
   final List<String> _ingredients;
+
   @override
   @JsonKey()
   List<String> get ingredients {
@@ -490,6 +519,7 @@ class _$RecipeImpl implements _Recipe {
   }
 
   final List<String> _deliverableIngredients;
+
   @override
   @JsonKey()
   List<String> get deliverableIngredients {
@@ -613,48 +643,70 @@ abstract class _Recipe implements Recipe {
 
   @override
   String get id;
+
   @override
   String get fats;
+
   @override
   String get name;
+
   @override
   String get time;
+
   @override
   String get image;
+
   @override
   List<String> get weeks;
+
   @override
   String get carbos;
+
   @override
   String get fibers;
+
   @override
   double get rating;
+
   @override
   String get country;
+
   @override
   num get ratings;
+
   @override
   String get calories;
+
   @override
   String get headline;
+
   @override
   List<String> get keywords;
+
   @override
   List<String> get products;
+
   @override
   String get proteins;
+
   @override
   int get favorites;
+
   @override
   int get difficulty;
+
   @override
   String get description;
+
   @override
   bool get highlighted;
+
   @override
   List<String> get ingredients;
+
   @override
   List<String> get deliverableIngredients;
+
   @override
   @JsonKey(ignore: true)
   _$$RecipeImplCopyWith<_$RecipeImpl> get copyWith =>

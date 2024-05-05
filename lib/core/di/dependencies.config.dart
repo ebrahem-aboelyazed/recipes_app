@@ -14,17 +14,18 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:google_sign_in/google_sign_in.dart' as _i5;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../../modules/auth/auth.dart' as _i12;
-import '../../modules/auth/services/auth_service_impl.dart' as _i13;
-import '../../modules/recipes/recipes.dart' as _i14;
-import '../../modules/recipes/services/recipes_service_impl.dart' as _i15;
+import '../../modules/auth/auth.dart' as _i13;
+import '../../modules/auth/services/auth_service_impl.dart' as _i14;
+import '../../modules/favorites/services/favorites_storage.dart' as _i10;
+import '../../modules/recipes/recipes.dart' as _i15;
+import '../../modules/recipes/services/recipes_service_impl.dart' as _i16;
 import '../../modules/settings/services/settings_storage.dart' as _i9;
 import '../../routes/app_pages.dart' as _i7;
 import '../api/local/api_cache_manager.dart' as _i8;
 import '../api/local/hive_manager.dart' as _i6;
-import '../api/remote/base_api_impl.dart' as _i11;
-import '../core.dart' as _i10;
-import 'register_module.dart' as _i16;
+import '../api/remote/base_api_impl.dart' as _i12;
+import '../core.dart' as _i11;
+import 'register_module.dart' as _i17;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -45,24 +46,25 @@ extension GetItInjectableX on _i1.GetIt {
     gh.singleton<_i7.AppPages>(() => _i7.AppPages());
     gh.lazySingleton<_i8.ApiCacheManager>(() => _i8.ApiCacheManager());
     gh.lazySingleton<_i9.SettingsStorage>(() => _i9.SettingsStorage());
-    await gh.singletonAsync<_i10.BaseApi>(
+    gh.lazySingleton<_i10.FavoritesStorage>(() => _i10.FavoritesStorage());
+    await gh.singletonAsync<_i11.BaseApi>(
       () {
-        final i = _i11.BaseApiImpl(
+        final i = _i12.BaseApiImpl(
           gh<_i3.Dio>(),
-          gh<_i10.ApiCacheManager>(),
+          gh<_i11.ApiCacheManager>(),
         );
         return i.init().then((_) => i);
       },
       preResolve: true,
     );
-    gh.lazySingleton<_i12.AuthService>(() => _i13.AuthServiceImpl(
+    gh.lazySingleton<_i13.AuthService>(() => _i14.AuthServiceImpl(
           gh<_i4.FirebaseAuth>(),
           gh<_i5.GoogleSignIn>(),
         ));
-    gh.lazySingleton<_i14.RecipesService>(
-        () => _i15.RecipesServiceImpl(gh<_i10.BaseApi>()));
+    gh.lazySingleton<_i15.RecipesService>(
+        () => _i16.RecipesServiceImpl(gh<_i11.BaseApi>()));
     return this;
   }
 }
 
-class _$RegisterModule extends _i16.RegisterModule {}
+class _$RegisterModule extends _i17.RegisterModule {}

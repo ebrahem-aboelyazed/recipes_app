@@ -37,11 +37,19 @@ class RecipesDetailsPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 16),
-                    Text(
-                      recipe.name,
-                      style: Styles.boldText.copyWith(
-                        fontSize: 20,
-                      ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            recipe.name,
+                            style: Styles.boldText.copyWith(
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 16),
+                        FavoriteIcon(recipe: recipe),
+                      ],
                     ),
                     const SizedBox(height: 4),
                     Text(

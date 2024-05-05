@@ -51,6 +51,10 @@ class _AppBottomNavState extends State<AppBottomNav> {
           label: context.l10n.home_txt,
         ),
         BottomNavigationBarItem(
+          icon: const Icon(Icons.favorite, size: 18),
+          label: context.l10n.favorites,
+        ),
+        BottomNavigationBarItem(
           icon: const Icon(Icons.settings, size: 18),
           label: context.l10n.settings,
         ),

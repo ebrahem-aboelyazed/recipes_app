@@ -27,20 +27,14 @@ class RecipeCard extends StatelessWidget {
           decoration: const BoxDecoration(),
           child: Row(
             children: [
-              SizedBox(
-                height: 120,
-                width: 120,
-                child: AspectRatio(
-                  aspectRatio: 1.8,
-                  child: Hero(
-                    tag: recipe.image,
-                    child: CachedImage(
-                      recipe.image,
-                      radius: 8,
-                      height: 120,
-                      width: 120,
-                    ),
-                  ),
+              Hero(
+                tag: recipe.image,
+                child: CachedImage(
+                  recipe.image,
+                  radius: 8,
+                  fit: BoxFit.contain,
+                  height: 120,
+                  width: 120,
                 ),
               ),
               const SizedBox(width: 16),
@@ -48,13 +42,21 @@ class RecipeCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      recipe.name,
-                      maxLines: 1,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            recipe.name,
+                            maxLines: 1,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 16),
+                        FavoriteIcon(recipe: recipe),
+                      ],
                     ),
                     const SizedBox(height: 8),
                     Text(

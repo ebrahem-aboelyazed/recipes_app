@@ -10,5 +10,6 @@
   "recipes": "Recipes",
   "ingredients": "Ingredients",
   "preparation_time": "Preparation Time",
-  "logout": "Logout"
+  "logout": "Logout",
+  "favorites": "Favorites"
 }

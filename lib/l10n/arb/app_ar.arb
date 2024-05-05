@@ -10,5 +10,6 @@
   "recipes": "الوصفات",
   "ingredients": "المكونات",
   "preparation_time": "وقت التحضير",
-  "logout": "تسجيل الخروج"
+  "logout": "تسجيل الخروج",
+  "favorites": "المفضله"
 }
